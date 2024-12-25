@@ -7,7 +7,7 @@ export default function HomeScreen() {
     </View>
   );
 }
-
+console.log()
 const styles = StyleSheet.create({
   container: {
     flex: 1,
