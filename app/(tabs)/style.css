@@ -6,6 +6,53 @@ const FlexDirectionBasics = () => {
     const [flexDirection, setflexDirection] = useState('column');
 
     return(
-        <PreviewLayout>
+        <PreviewLayout
+        label = "flexDirection"
+        values = {['column','row','row-reverse','column-reverse']}
+        selectedValue = {flexDirection}
+        setSelecedValue = {setflexDirection}>
+        <View style = {[styles.box,{background-color: 'powderblue';}]}/>
+        <View style = {[styles.box,{background-color: 'skyblue';}]}/>
+        <View style = {[styles.box,{background-color: 'steelblue';}]}/>
+        </PreviewLayout>
+    );
+};
+
+
+type PreviewLayoutProps = PropsWithChildren<{
+    label: string;
+    values:string[];
+    setSelectedValue:(value: string) => void;
+}>;
+
+type Movie = {
+    id: string;
+    title: string;
+    releaseYear:string;
+};
+
+const App = () => {
+    const [isLoading,setLoading] = useState(true);
+    const [data,setData] = useState<Movie[]>([]);
+
+    const getMovies = async = () => {
+        try{
+            cosnt response = await fetch('https://reactnative.dev/movies.json');
+            cosnt json = await response.json();
+            setData(json.movies);
+        }catch(error){
+            console.error(error);
+        }finally{
+            setLoading(false);
+        }
+    };
+    useEffect(() => {
+        getMoview();
+    },[]);
+
+    return(
+        <view>
     )
+
+
 }
