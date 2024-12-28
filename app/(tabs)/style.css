@@ -1,0 +1,11 @@
+import React,{useState} from 'react';
+import {StyleSheet, Text, TouchableOpacity,View} from 'react-native';
+import type {PropWithChildren} from 'react';
+
+const FlexDirectionBasics = () => {
+    const [flexDirection, setflexDirection] = useState('column');
+
+    return(
+        <PreviewLayout>
+    )
+}
