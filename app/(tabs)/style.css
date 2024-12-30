@@ -19,17 +19,6 @@ const FlexDirectionBasics = () => {
 };
 
 
-type PreviewLayoutProps = PropsWithChildren<{
-    label: string;
-    values:string[];
-    setSelectedValue:(value: string) => void;
-}>;
-
-type Movie = {
-    id: string;
-    title: string;
-    releaseYear:string;
-};
 
 
 
